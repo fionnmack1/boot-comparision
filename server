@@ -19,3 +19,26 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
+app.get('/search', async (req, res) => {
+    const query = req.query.query;
+
+    // Example data structure, replace it with actual data fetching logic
+    const results = [
+        {
+            name: "Football Boot 1",
+            price: "$100",
+            store: "Store A",
+            image: "link-to-image1.jpg",
+            comparison: { "Store B": "$90", "Store C": "$95" }
+        },
+        {
+            name: "Football Boot 2",
+            price: "$120",
+            store: "Store D",
+            image: "link-to-image2.jpg",
+            comparison: { "Store E": "$115", "Store F": "$110" }
+        }
+    ];
+
+    res.json(results);
+});
