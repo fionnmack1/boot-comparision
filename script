@@ -1,0 +1,27 @@
+function searchBoots() {
+    const query = document.getElementById('search').value;
+    // Replace this URL with your backend or API URL
+    const apiUrl = `https://api.example.com/search?query=${query}`;
+    
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => displayResults(data))
+        .catch(error => console.error('Error fetching data:', error));
+}
+
+function displayResults(data) {
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = ''; // Clear previous results
+
+    data.forEach(boot => {
+        const bootDiv = document.createElement('div');
+        bootDiv.classList.add('boot');
+        bootDiv.innerHTML = `
+            <h2>${boot.name}</h2>
+            <p>Price: ${boot.price}</p>
+            <p>Available at: ${boot.store}</p>
+            <a href="${boot.link}" target="_blank">Buy Now</a>
+        `;
+        resultsDiv.appendChild(bootDiv);
+    });
+}
