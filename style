@@ -20,3 +20,18 @@ header {
     padding: 10px;
     margin-bottom: 10px;
 }
+.boot {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.boot img {
+    display: block;
+    margin: 0 auto 10px; /* Center the image */
+}
+
+h3 {
+    margin-top: 10px;
+}
+
