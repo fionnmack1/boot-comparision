@@ -25,3 +25,25 @@ function displayResults(data) {
         resultsDiv.appendChild(bootDiv);
     });
 }
+function displayResults(data) {
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = ''; // Clear previous results
+
+    data.forEach(boot => {
+        const bootDiv = document.createElement('div');
+        bootDiv.classList.add('boot');
+        bootDiv.innerHTML = `
+            <h2>${boot.name}</h2>
+            <img src="${boot.image}" alt="${boot.name}" style="max-width: 200px;">
+            <p>Price: ${boot.price} (Available at: ${boot.store})</p>
+            <h3>Price Comparison:</h3>
+            <ul>
+                ${Object.entries(boot.comparison).map(([store, price]) => `
+                    <li>${store}: ${price}</li>
+                `).join('')}
+            </ul>
+            <a href="#" target="_blank">Buy Now</a> 
+        `;
+        resultsDiv.appendChild(bootDiv);
+    });
+}
