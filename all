@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Boot Comparison</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Football Boot Comparison</h1>
+        <input type="text" id="search" placeholder="Search for football boots...">
+        <button onclick="searchBoots()">Search</button>
+    </header>
+    <main id="results"></main>
+    <footer>
+        <p>&copy; 2023 Football Boot Comparison</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
